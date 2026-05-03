@@ -1,0 +1,6 @@
+Classificador,Média Acurácia
+Perceptron,0.8621
+Bayes (GaussianNB),0.8122
+MLP (Neural Network),0.9316
+SVM (SVC),0.9305
+Decision Tree,0.9066
