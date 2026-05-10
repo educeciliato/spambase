@@ -5,7 +5,6 @@ from pathlib import Path
 import json
 
 BASE_DIR = Path(__file__).parent
-SEED = 4567
 
 def load_json(file_path: Path):
     if not file_path.exists():
@@ -64,9 +63,6 @@ def transform_string_columns(df: pd.DataFrame):
             mappings[coluna] = mapping
     return df, mappings
 
-def shuffle_dataframe(df: pd.DataFrame):
-    shuffled_index = np.random.RandomState(SEED).permutation(df.index)
-    return df.loc[shuffled_index].reset_index(drop=True)
 
 def split_dataset(df: pd.DataFrame, train_size: float = 0.8):
     train_count = int(len(df) * train_size)
@@ -111,7 +107,6 @@ def process_dataset():
     df = apply_configured_column_mappings(df, config)
     
     df_numeric, mappings = transform_string_columns(df)
-    df_numeric = shuffle_dataframe(df_numeric)
     
     df_train, df_test = split_dataset(df_numeric, train_size=0.8)
 

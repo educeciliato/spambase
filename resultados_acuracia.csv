@@ -1,6 +1,6 @@
 Classificador,Média Acurácia
-Perceptron,0.8621
-Bayes,0.8122
-MLP,0.9349
-SVM,0.9305
-Decision Tree,0.9084
+Perceptron,0.8531
+Bayes,0.8053
+MLP,0.9457
+SVM,0.9381
+Decision Tree,0.9081
